@@ -1,0 +1,102 @@
+#container {
+    width: 50%;
+    height: 80%;
+    margin-bottom: 20px;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: aqua;
+     /* Ensure padding and border are included in the width/height */
+    }
+body{
+    background-image:url("b.png");
+    background-size: cover;
+}
+
+#container > div {
+    flex: 1 0 calc(33.33% - 2px); /* Each div takes up 1/3 of the container width minus borders */
+    height: 33.33%; /* Each div takes up 1/3 of the container height */
+    border: 2px solid snow;
+    box-sizing: border-box;
+    
+    
+}
+
+/* Adjust specific borders for the grid layout */
+#croix
+{
+    
+    transform: rotate(51.4deg);
+    margin-top:-24%;
+   
+}
+#croix2{
+  
+    transform: rotate(-51.4deg);
+    margin-top:-129%;
+}
+#croix2,#croix{
+    width:2px;
+    height:160%;
+    background-color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+#cercle{
+    width:200px;
+    height:95%;
+    border:2px solid red;
+    border-radius:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-104%;
+    visibility:hidden;
+   
+}
+._1,._2,._3,._4,._5,._6,._7,._8,._9{
+    visibility: hidden;
+}
+#container > div:hover
+{
+    background: rgb(77, 74, 165);
+  transition:1s;
+  cursor:pointer;
+}
+
+
+
+#image{
+    margin-left: 310px;
+    size: 10%;
+}
+
+
+/* CSS */
+#button{
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
