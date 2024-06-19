@@ -11,18 +11,27 @@
     border-radius: 5px;
     box-sizing: border-box;
     background-color: aqua;
+    position: relative;
+         
+    
+
      /* Ensure padding and border are included in the width/height */
     }
 body{
     background-image:url("b.png");
-    background-size: cover;
+    background-size:contain;
+
+    background-position: auto;
+    height: auto;
 }
 
-#container > div {
+#container > div{
     flex: 1 0 calc(33.33% - 2px); /* Each div takes up 1/3 of the container width minus borders */
     height: 33.33%; /* Each div takes up 1/3 of the container height */
     border: 2px solid snow;
     box-sizing: border-box;
+    z-index: 1;
+    
     
     
 }
@@ -99,4 +108,84 @@ body{
   width: fit-content;
   word-break: break-word;
   border: 0;
+}
+
+#window{
+    height:200px;
+    width:500px;
+    border:4px solid rgb(20, 150, 186);
+    border-radius: 20px;
+    margin-left: 450px;
+    z-index: 2;
+    position:absolute;
+    background-color: snow;
+    margin-top: 30px;
+    background: rgb(49, 237, 237);
+    visibility:hidden;
+
+    
+
+    }
+
+#play,#quit {
+      appearance: none;
+      background-color: #FFFFFF;
+      border-radius: 40em;
+      border-style: none;
+      box-shadow: #ADCFFF 0 -12px 6px inset;
+      box-sizing: border-box;
+      color: #000000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: -apple-system,sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -.24px;
+      margin: 0;
+      outline: none;
+      padding: 1rem 1.3rem;
+      quotes: auto;
+      text-align: center;
+      text-decoration: none;
+      transition: all .15s;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      margin-top: 50px;
+      margin-right:70px;
+
+}
+#play{
+    margin-left: 60px;
+    margin-top: 70px;
+}
+    
+    #play:hover {
+      background-color: #FFC229;
+      box-shadow: #FF6314 0 -6px 8px inset;
+      transform: scale(1.125);
+    }
+    #quit:hover {
+        background-color: #FFC229;
+        box-shadow: #FF6314 0 -6px 8px inset;
+        transform: scale(1.125);
+      }
+    #play,#quit {
+      transform: scale(1.025);
+    }
+   
+#winner{
+         align-items: center;
+         justify-content: center;
+         font-size: larger;
+         position: relative;
+         font: italic 1.2rem "Fira Sans", serif;
+         margin-left:190px ;
+}
+#scr
+{
+    font-size: larger;
+    color:rgb(12, 12, 12);
+    margin-left:150px ;
+    
 }

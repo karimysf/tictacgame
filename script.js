@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     let tour=0;
-    
+    var whowon=-1;
+    let blue=0;
+    let red=0;
+    const winner=document.getElementById("winner");
+    const play=document.getElementById("play");
+    const quit=document.getElementById("quit");
+    const score=document.getElementById("scr")
+    const window=document.getElementById("window");
+    const container=document.getElementById("container");
     const div1 = document.getElementById("one");
     const div2 = document.getElementById("two");
     const div3 = document.getElementById("three");
@@ -32,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const c6 = document.getElementsByClassName("_6") // Ensure this matches the correct ID
     const c7 = document.getElementsByClassName("_7")
     const c8 = document.getElementsByClassName("_8")
-    const c9 = document.getElementsByClassName("_9");
+    const c9 = document.getElementsByClassName("_9")
 
     function ce(index) {
 if (check[index]==0)
@@ -50,8 +58,30 @@ if (check[index]==0)
      
 }
 if (win() || !check.includes(0))
-    {
+    {    
         reset();
+        if (whowon==0)
+            {
+                winner.innerText="Blue won";
+                winner.style.color="blue"
+                blue++;
+                whowon=-1;
+            }
+        if (whowon==1)
+            {
+                winner.innerText="red won";
+                winner.style.color="red"
+                red++;
+                whowon=-1;
+            }
+        if (whowon==-1) {
+            winner.innerText="draw !!";
+        }
+
+        score.innerText="blue :"+blue+" : "+red+" : red";
+        container.style.visibility="hidden"
+        window.style.visibility="visible";
+        
     }
 
 
@@ -61,7 +91,7 @@ function win()
     {
         if (check[1]==1 && check[2]==1 ||  check[3]==1 && check[6]==1 || check[4]==1 && check[8]==1)
             {
-                alert("blue won!!")
+                whowon=0;
                 return true
                 
             }
@@ -70,7 +100,7 @@ function win()
 if (check[1]==1)
     {  if (check[4]==1 && check[7]==1)
         {
-        alert("blue won!!")
+            whowon=0;
         return true
         }
         
@@ -79,7 +109,7 @@ if (check[2]==1)
     {
         if (check[5]==1 && check[8]==1 ||  check[4]==1 && check[6]==1)
          {  
-            alert("blue won!!")
+            whowon=0;
             return true
          }
 
@@ -87,7 +117,7 @@ if (check[2]==1)
 if (check[3]==1)
     {   if (check[5]==1 && check[4]==1 )
         {
-        alert("blue won!!")
+            whowon=0;
         return true
         }
     }
@@ -96,7 +126,7 @@ if (check[6]==1)
     {
         if (check[7]==1 && check[8]==1) 
             {
-            alert("blue won!!")
+                whowon=0;
             return true
             }
     }
@@ -107,15 +137,15 @@ if (check[0]==2)
     {
         if (check[1]==2 && check[2]==2 ||  check[3]==2 && check[6]==2 || check[4]==2 && check[8]==2)
             {
-                alert("red won!!")
+                whowon=1;
                 return true
             }
         
     }
-if (check[1]==1)
+if (check[1]==2)
     {  if (check[4]==2 && check[7]==2)
         {
-        alert("red won!!")
+            whowon=1;
         return true
         }
     }
@@ -123,7 +153,7 @@ if (check[2]==2)
     {
         if (check[5]==2 && check[8]==2 ||  check[4]==2 && check[6]==2)
             {
-            alert("red won!!")
+                whowon=1;
             return true
             }
 
@@ -131,7 +161,7 @@ if (check[2]==2)
 if (check[3]==2)
     {   if (check[5]==2 && check[4]==2 )
         {
-        alert("red won!!")
+            whowon=1;
         return true
         }
     }
@@ -140,7 +170,7 @@ if (check[6]==2)
     {
         if (check[7]==2 && check[8]==2) 
             {
-            alert("red won!!")
+                whowon=1;
             return true
             }
     }
@@ -172,4 +202,11 @@ function reset()
 
     const but=this.getElementById("button");
     but.addEventListener("click",reset);
+
+    play.addEventListener("click",function(){
+        reset();
+        container.style.visibility="visible"
+        window.style.visibility="hidden";
+
+    })
 });
