@@ -58,26 +58,27 @@ if (check[index]==0)
      
 }
 if (win() || !check.includes(0))
-    {    
+    {    let str=""
         reset();
         if (whowon==0)
             {
-                winner.innerText="Blue won";
+                str="Blue won";
                 winner.style.color="blue"
                 blue++;
                 whowon=-1;
             }
         if (whowon==1)
             {
-                winner.innerText="red won";
+                str="red won";
                 winner.style.color="red"
                 red++;
                 whowon=-1;
             }
         if (whowon==-1) {
-            winner.innerText="draw !!";
+            str="draw !!";
+            winner.style.color="grey"
         }
-
+        winner.innerText=str;
         score.innerText="blue :"+blue+" : "+red+" : red";
         container.style.visibility="hidden"
         window.style.visibility="visible";
